@@ -8,12 +8,13 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
   public class SpyRepository
   {
     static List<Spy> _spies = new List<Spy>();
-        
-        // GetAll() return _spies field
-        internal IEnumerable<Spy> GetAll()
-        {
-            return _spies;
-        }
+
+    // GetAll() return _spies field
+    internal IEnumerable<Spy> GetAll()
+    {
+      var tempSpies = _spies;
+      return tempSpies;
+    }
 
     // Add newSpy Method
     internal void AddSpy(Spy newSpy)
@@ -26,7 +27,10 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
     // Get by ID Method
     internal Spy GetByID(Guid spyID)
     {
-      return _spies.FirstOrDefault(spy => spy.SpyID == spyID);
+      var temp =  _spies.FirstOrDefault(spy => spy.SpyID == spyID);
+      return temp;
+
+      //return _spies.FirstOrDefault(spy => spy.SpyID == spyID);
     }
 
     internal IEnumerable<Spy> GetSpiesBySkill(string skill)

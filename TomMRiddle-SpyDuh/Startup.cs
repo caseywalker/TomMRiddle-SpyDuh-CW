@@ -67,7 +67,6 @@ namespace TomMRiddle_SpyDuh
       //Our spies that we start with
       Spy boris = new Spy
       {
-        SpyID = Guid.NewGuid(),
         Details = "Spy does good job",
         SpyBackground = "Spy been doin this a long time",
         LSTSkills = new List<string>
@@ -83,7 +82,6 @@ namespace TomMRiddle_SpyDuh
       };
       Spy john = new Spy
       {
-        SpyID = Guid.NewGuid(),
         Details = "Spy does bad job",
         SpyBackground = "Spy been doin this a short time",
         LSTSkills = new List<string>
@@ -99,7 +97,6 @@ namespace TomMRiddle_SpyDuh
       };
       Spy alex = new Spy
       {
-        SpyID = Guid.NewGuid(),
         Details = "You'll never know who's side he's on",
         SpyBackground = "Has been known to play both sides",
         LSTSkills = new List<string>
@@ -115,7 +112,6 @@ namespace TomMRiddle_SpyDuh
       };
       Spy paul = new Spy
       {
-        SpyID = Guid.NewGuid(),
         Details = "Spy is clueless",
         SpyBackground = "Spy failed out of spy school",
         LSTSkills = new List<string>
@@ -129,7 +125,6 @@ namespace TomMRiddle_SpyDuh
       };
       Spy nate = new Spy
       {
-        SpyID = Guid.NewGuid(),
         Details = "Spy hasn't been seen since 1776.",
         SpyBackground = "The original Spy",
         LSTSkills = new List<string>
@@ -145,7 +140,6 @@ namespace TomMRiddle_SpyDuh
       };
       Spy ben = new Spy
       {
-        SpyID = Guid.NewGuid(),
         Details = "Spy doesn't know he's a spy.",
         SpyBackground = "Sleeper agent.",
         LSTSkills = new List<string>
@@ -160,7 +154,6 @@ namespace TomMRiddle_SpyDuh
       };
       Spy james = new Spy
       {
-        SpyID = Guid.NewGuid(),
         Details = "Spy is here for a good time, not a long time.",
         SpyBackground = "Spy likes to party.",
         LSTSkills = new List<string>
@@ -261,13 +254,13 @@ namespace TomMRiddle_SpyDuh
 
 
       //Adding spies to repo
-      _spyRepo.Add(boris);
-      _spyRepo.Add(john);
-      _spyRepo.Add(alex);
-      _spyRepo.Add(paul);
-      _spyRepo.Add(nate);
-      _spyRepo.Add(ben);
-      _spyRepo.Add(james);
+      _spyRepo.AddSpy(boris);
+      _spyRepo.AddSpy(john);
+      _spyRepo.AddSpy(alex);
+      _spyRepo.AddSpy(paul);
+      _spyRepo.AddSpy(nate);
+      _spyRepo.AddSpy(ben);
+      _spyRepo.AddSpy(james);
     }
 
   }
