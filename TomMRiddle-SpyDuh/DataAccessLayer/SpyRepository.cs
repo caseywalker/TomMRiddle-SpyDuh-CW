@@ -42,6 +42,12 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
         }
       }
     };
+        
+        // GetAll() return _spies field
+        internal IEnumerable<Spy> GetAll()
+        {
+            return _spies;
+        }
 
         // Add newSpy Method
         internal void Add(Spy newSpy)
@@ -57,6 +63,8 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
         {
             return _spies.FirstOrDefault(spy => spy.SpyID == spyId);
         }
+
+
 
   }
 }
