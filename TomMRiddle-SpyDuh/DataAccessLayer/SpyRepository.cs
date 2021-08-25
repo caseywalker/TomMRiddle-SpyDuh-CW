@@ -7,6 +7,10 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
 {
   public class SpyRepository
   {
+    public SpyRepository()
+    {
+
+    }
     static List<Spy> _spies = new List<Spy>
     {
       new Spy
@@ -23,6 +27,10 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
         {
           "Espionage",
           "Political take-over"
+        },
+        LSTFriendlySpies = new List<Spy>
+        {
+        Hermonite, 
         }
       },
       new Spy
@@ -40,7 +48,21 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
           "Trapping",
           "Influence"
         }
-      }
+      },
+      Hermonite
     };
+    static Spy Hermonite = new Spy
+    {
+
+    };
+   static Spy Ron = new Spy
+    {
+
+    };
+
+
+
+    _spies.Add(Hermonite);
+
   }
 }

@@ -11,14 +11,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TomMRiddle_SpyDuh.DataAccessLayer;
 
 namespace TomMRiddle_SpyDuh
 {
   public class Startup
   {
+    SpyRepository _spyRepo;
     public Startup(IConfiguration configuration)
     {
       Configuration = configuration;
+      _spyRepo = new SpyRepository();
     }
 
     public IConfiguration Configuration { get; }
