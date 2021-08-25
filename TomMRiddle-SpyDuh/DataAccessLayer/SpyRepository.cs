@@ -7,47 +7,13 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
 {
   public class SpyRepository
   {
-    static List<Spy> _spies = new List<Spy>
-    {
-      new Spy
-      {
-        SpyID = Guid.NewGuid(),
-        Details = "Spy does good job",
-        SpyBackground = "Spy been doin this a long time",
-        LSTSkills = new List<string>
+    static List<Spy> _spies = new List<Spy>();
+        
+        // GetAll() return _spies field
+        internal IEnumerable<Spy> GetAll()
         {
-          "Spying",
-          "Plotting"
-        },
-        SpyServices = new List<string>
-        {
-          "Espionage",
-          "Political take-over"
+            return _spies;
         }
-      },
-      new Spy
-      {
-        SpyID = Guid.NewGuid(),
-        Details = "Spy does decent job",
-        SpyBackground = "Spy been doin this a little time",
-        LSTSkills = new List<string>
-        {
-          "Spying",
-          "Infiltrating"
-        },
-        SpyServices = new List<string>
-        {
-          "Trapping",
-          "Influence"
-        }
-      }
-    };
-
-    // GetAll() return _spies field
-    internal IEnumerable<Spy> GetAll()
-    {
-      return _spies;
-    }
 
     // Add newSpy Method
     internal void AddSpy(Spy newSpy)
