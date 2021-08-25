@@ -31,5 +31,19 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
         Services = "This is my first posting, please hire me."
       }
     };
+
+    internal Post GetById(Guid postId)
+    {
+      return _posts.FirstOrDefault(post => post.PostID == postId);
+    }
+    internal List<Post> GetAll()
+    {
+      return _posts;
+    }
+    internal void Add(Post newPost)
+    {
+      newPost.PostID = Guid.NewGuid();
+      _posts.Add(newPost);
+    }
   }
 }
