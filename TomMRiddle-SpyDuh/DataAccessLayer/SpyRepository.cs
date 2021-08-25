@@ -7,10 +7,6 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
 {
   public class SpyRepository
   {
-    public SpyRepository()
-    {
-
-    }
     static List<Spy> _spies = new List<Spy>();
         
         // GetAll() return _spies field
