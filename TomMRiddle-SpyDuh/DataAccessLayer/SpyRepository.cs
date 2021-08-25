@@ -42,23 +42,29 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
         }
       }
     };
+        
+        // GetAll() return _spies field
+        internal IEnumerable<Spy> GetAll()
+        {
+            return _spies;
+        }
 
-    public List<Spy> GetAll()
-    {
-      return _spies;
-    }
+        // Add newSpy Method
+        internal void Add(Spy newSpy)
+        {
+            newSpy.SpyID = Guid.NewGuid();
 
-    internal void AddSpy(Spy newSpy)
-    {
-      newSpy.SpyID = Guid.NewGuid();
-      _spies.Add(newSpy);
-    }
+            _spies.Add(newSpy);
+        }
 
-    //internal void GetSpy(string newSpy)
-    //{
-    //  newSpy.SpyID = Guid.NewGuid();
-    //  _spies.Add(newSpy);
-    //}
+
+        // Get by Id Method
+        internal Spy GetById(Guid spyId)
+        {
+            return _spies.FirstOrDefault(spy => spy.SpyID == spyId);
+        }
+
+
 
   }
 }
