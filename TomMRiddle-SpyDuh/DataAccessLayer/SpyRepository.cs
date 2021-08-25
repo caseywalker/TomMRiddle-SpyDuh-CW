@@ -28,10 +28,6 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
           "Espionage",
           "Political take-over"
         },
-        LSTFriendlySpies = new List<Spy>
-        {
-        Hermonite, 
-        }
       },
       new Spy
       {
@@ -49,15 +45,6 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
           "Influence"
         }
       },
-      Hermonite
-    };
-    static Spy Hermonite = new Spy
-    {
-
-    };
-   static Spy Ron = new Spy
-    {
-
     };
         
         // GetAll() return _spies field
