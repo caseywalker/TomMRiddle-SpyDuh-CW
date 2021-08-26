@@ -13,4 +13,6 @@ namespace TomMRiddle_SpyDuh.Models
     public List<Spy> LSTEnemySpies { get; set; }
     public List<string> SpyServices { get; set; }
   }
+
+
 }
