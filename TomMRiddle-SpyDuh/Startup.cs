@@ -167,90 +167,90 @@ namespace TomMRiddle_SpyDuh
       };
 
       // Adding spies to list of friends
-      boris.LSTFriendlySpies = new List<Spy>
-      {
-        john,
-        alex,
-        paul
-      };
-      john.LSTFriendlySpies = new List<Spy>
-      {
-        boris,
-        nate,
-        ben
-      };
-      alex.LSTFriendlySpies = new List<Spy>
-      {
-        james,
-        boris,
-        john
-      };
-      paul.LSTFriendlySpies = new List<Spy>
-      {
-        alex
-      };
-      nate.LSTFriendlySpies = new List<Spy>
-      {
-        ben,
-        james,
-      };
-      ben.LSTFriendlySpies = new List<Spy>
-      {
-        john,
-        paul
-      };
-      james.LSTFriendlySpies = new List<Spy>
-      {
-        boris,
-        john,
-        paul,
-        nate
-      };
+      //boris.LSTFriendlySpies = new List<Spy>
+      //{
+      //  john,
+      //  alex,
+      //  paul
+      //};
+      //john.LSTFriendlySpies = new List<Spy>
+      //{
+      //  boris,
+      //  nate,
+      //  ben
+      //};
+      //alex.LSTFriendlySpies = new List<Spy>
+      //{
+      //  james,
+      //  boris,
+      //  john
+      //};
+      //paul.LSTFriendlySpies = new List<Spy>
+      //{
+      //  alex
+      //};
+      //nate.LSTFriendlySpies = new List<Spy>
+      //{
+      //  ben,
+      //  james,
+      //};
+      //ben.LSTFriendlySpies = new List<Spy>
+      //{
+      //  john,
+      //  paul
+      //};
+      //james.LSTFriendlySpies = new List<Spy>
+      //{
+      //  boris,
+      //  john,
+      //  paul,
+      //  nate
+      //};
 
       // Adding spies to list of enemies
-      boris.LSTEnemySpies = new List<Spy>
-      {
-        nate,
-        ben,
-        james
-      };
-      john.LSTEnemySpies = new List<Spy>
-      {
-        james,
-        paul,
-        alex
-      };
-      alex.LSTEnemySpies = new List<Spy>
-      {
-        paul,
-        nate,
-        ben
-      };
-      paul.LSTEnemySpies = new List<Spy>
-      {
-        nate,
-        ben,
-        james,
-        boris,
-        john
-      };
-      nate.LSTEnemySpies = new List<Spy>
-      {
-        boris,
-        john,
-        alex,
-        paul
-      };
-      ben.LSTEnemySpies = new List<Spy>
-      {
-        alex,
-        james
-      };
-      james.LSTEnemySpies = new List<Spy>
-      {
-        alex,
-        ben
-      };
+      //boris.LSTEnemySpies = new List<Spy>
+      //{
+      //  nate,
+      //  ben,
+      //  james
+      //};
+      //john.LSTEnemySpies = new List<Spy>
+      //{
+      //  james,
+      //  paul,
+      //  alex
+      //};
+      //alex.LSTEnemySpies = new List<Spy>
+      //{
+      //  paul,
+      //  nate,
+      //  ben
+      //};
+      //paul.LSTEnemySpies = new List<Spy>
+      //{
+      //  nate,
+      //  ben,
+      //  james,
+      //  boris,
+      //  john
+      //};
+      //nate.LSTEnemySpies = new List<Spy>
+      //{
+      //  boris,
+      //  john,
+      //  alex,
+      //  paul
+      //};
+      //ben.LSTEnemySpies = new List<Spy>
+      //{
+      //  alex,
+      //  james
+      //};
+      //james.LSTEnemySpies = new List<Spy>
+      //{
+      //  alex,
+      //  ben
+      //};
 
 
       //Adding spies to repo
