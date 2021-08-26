@@ -29,7 +29,14 @@ namespace TomMRiddle_SpyDuh.Controllers
       _spyRepo.GetByID(spyID);
     }
 
-    [HttpGet("getAllSpiesBySkill/{skill}")]
+
+    [HttpGet("getSpyByName/{name}")]
+    public IEnumerable<Spy>  GetSpyByName(string name)
+        {
+            return _spyRepo.GetByName(name);
+        }
+
+        [HttpGet("getAllSpiesBySkill/{skill}")]
     public IEnumerable<Spy> GetAllSpiesBySkill(string skill)
     {
      return _spyRepo.GetSpiesBySkill(skill);

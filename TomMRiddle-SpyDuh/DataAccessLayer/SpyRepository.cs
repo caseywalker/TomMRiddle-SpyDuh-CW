@@ -67,6 +67,7 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
             //return _spies.FirstOrDefault(spy => spy.SpyID == spyID);
         }
 
+        // Get by Name Method
         internal IEnumerable<Spy> GetByName(string name)
         {
             return _spies.Where(Spy => Spy.Name.Contains(name));
