@@ -42,6 +42,7 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
         //    return _spies.Where(spy => spy.SpyServices == services);
         //}
 
+
     // GetAll() return _spies field
     internal IEnumerable<Spy> GetAll()
     {
