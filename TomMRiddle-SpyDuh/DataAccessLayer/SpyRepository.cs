@@ -8,28 +8,50 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
   public class SpyRepository
   {
     static List<Spy> _spies = new List<Spy>();
-        
-        // GetAll() return _spies field
-        internal IEnumerable<Spy> GetAll()
-        {
-            return _spies;
-        }
 
-        // Add newSpy Method
-        internal void Add(Spy newSpy)
-        {
-            newSpy.SpyID = Guid.NewGuid();
+    // GetAll() return _spies field
+    internal IEnumerable<Spy> GetAll()
+    {
+      var tempSpies = _spies;
+      return tempSpies;
+    }
 
-            _spies.Add(newSpy);
-        }
+    // Add newSpy Method
+    internal void AddSpy(Spy newSpy)
+    {
+      newSpy.SpyID = Guid.NewGuid();
 
+      _spies.Add(newSpy);
+    }
 
-        // Get by Id Method
-        internal Spy GetById(Guid spyId)
-        {
-            return _spies.FirstOrDefault(spy => spy.SpyID == spyId);
-        }
+    // Get by ID Method
+    internal Spy GetByID(Guid spyID)
+    {
+      var temp =  _spies.FirstOrDefault(spy => spy.SpyID == spyID);
+      return temp;
 
+      //return _spies.FirstOrDefault(spy => spy.SpyID == spyID);
+    }
+
+    internal IEnumerable<Spy> GetSpiesBySkill(string skill)
+    {
+      return _spies.Where(Spy => Spy.LSTSkills.Contains(skill));
+    }
+
+    internal IEnumerable<Spy> GetSpyFriends(Guid spyID)
+    {
+      return _spies.FirstOrDefault(spy => spy.SpyID == spyID).LSTFriendlySpies;
+    }
+
+    internal IEnumerable<Spy> GetSpyEnemies(Guid spyID)
+    {
+      return _spies.FirstOrDefault(spy => spy.SpyID == spyID).LSTEnemySpies;
+    }
+
+    internal IEnumerable<string> GetSpyAvailableSkils(Guid spyID)
+    {
+      return _spies.FirstOrDefault(spy => spy.SpyID == spyID).LSTSkills;
+    }
 
 
   }
