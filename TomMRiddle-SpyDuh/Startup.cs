@@ -67,7 +67,8 @@ namespace TomMRiddle_SpyDuh
       //Our spies that we start with
       Spy boris = new Spy
       {
-        Details = "Spy does good job",
+          Name = "Boris",
+          Details = "Spy does good job",
         SpyBackground = "Spy been doin this a long time",
         LSTSkills = new List<string>
         {
@@ -82,6 +83,7 @@ namespace TomMRiddle_SpyDuh
       };
       Spy john = new Spy
       {
+        Name = "John",
         Details = "Spy does bad job",
         SpyBackground = "Spy been doin this a short time",
         LSTSkills = new List<string>
@@ -97,7 +99,8 @@ namespace TomMRiddle_SpyDuh
       };
       Spy alex = new Spy
       {
-        Details = "You'll never know who's side he's on",
+          Name = "Alex",
+          Details = "You'll never know who's side he's on",
         SpyBackground = "Has been known to play both sides",
         LSTSkills = new List<string>
         {
@@ -112,7 +115,8 @@ namespace TomMRiddle_SpyDuh
       };
       Spy paul = new Spy
       {
-        Details = "Spy is clueless",
+          Name = "Paul",
+          Details = "Spy is clueless",
         SpyBackground = "Spy failed out of spy school",
         LSTSkills = new List<string>
         {
@@ -125,7 +129,8 @@ namespace TomMRiddle_SpyDuh
       };
       Spy nate = new Spy
       {
-        Details = "Spy hasn't been seen since 1776.",
+          Name = "Nate",
+          Details = "Spy hasn't been seen since 1776.",
         SpyBackground = "The original Spy",
         LSTSkills = new List<string>
         {
@@ -140,7 +145,8 @@ namespace TomMRiddle_SpyDuh
       };
       Spy ben = new Spy
       {
-        Details = "Spy doesn't know he's a spy.",
+          Name = "Ben",
+          Details = "Spy doesn't know he's a spy.",
         SpyBackground = "Sleeper agent.",
         LSTSkills = new List<string>
         {
@@ -154,7 +160,8 @@ namespace TomMRiddle_SpyDuh
       };
       Spy james = new Spy
       {
-        Details = "Spy is here for a good time, not a long time.",
+          Name = "James",
+          Details = "Spy is here for a good time, not a long time.",
         SpyBackground = "Spy likes to party.",
         LSTSkills = new List<string>
         {
