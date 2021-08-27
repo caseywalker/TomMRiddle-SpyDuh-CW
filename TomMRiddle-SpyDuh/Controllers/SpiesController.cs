@@ -52,6 +52,12 @@ namespace TomMRiddle_SpyDuh.Controllers
     {
       return _spyRepo.GetSpyAvailableSkils(spyID);
     }
+    
+    [HttpGet("getSpyAllSkillsAndServices/{spyID}")]
+    public SkillsAndServices GetSpyAllSkillsAndServices(Guid spyID)
+    {
+      return _spyRepo.GetSkillsAndServices(spyID);
+    }
 
     [HttpPost]
     public void AddSpy(Spy newSpy)

@@ -58,6 +58,21 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
       return _spies.FirstOrDefault(spy => spy.SpyID == spyID).LSTSkills;
     }
 
+    internal SkillsAndServices GetSkillsAndServices(Guid spyID)
+    {
+      // Get the spy that is passed by controller
+      var matchingSpy = _spies.FirstOrDefault(spy => spy.SpyID == spyID);
+
+      // Create a local model to return the skills and services of that spy. 
+      var SkillAndServiceModel = new SkillsAndServices
+      {
+        ListSkills = matchingSpy.LSTSkills,
+        ListSpyServices = matchingSpy.SpyServices
+      };
+
+      return SkillAndServiceModel;
+    }
+
 
   }
 }
