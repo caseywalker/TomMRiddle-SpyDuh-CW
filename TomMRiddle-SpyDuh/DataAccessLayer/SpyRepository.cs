@@ -24,6 +24,11 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
       _spies.Add(newSpy);
     }
 
+    //internal void addSpyToFriendsList( Spy friendlySpy)
+    //{
+
+    //}
+
     // Get by ID Method
     internal Spy GetByID(Guid spyID)
     {
@@ -40,12 +45,12 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
 
     internal IEnumerable<Spy> GetSpyFriends(Guid spyID)
     {
-      return _spies.FirstOrDefault(spy => spy.SpyID == spyID).LSTFriendlySpies;
+      return _spies.Where(x => _spies.FirstOrDefault(y => y.SpyID == spyID).LSTFriendlySpies.Contains(x.SpyID));
     }
 
     internal IEnumerable<Spy> GetSpyEnemies(Guid spyID)
     {
-      return _spies.FirstOrDefault(spy => spy.SpyID == spyID).LSTEnemySpies;
+      return _spies.Where(x => _spies.FirstOrDefault(y => y.SpyID == spyID).LSTEnemySpies.Contains(x.SpyID));
     }
 
     internal IEnumerable<string> GetSpyAvailableSkils(Guid spyID)
