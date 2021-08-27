@@ -20,11 +20,14 @@ namespace TomMRiddle_SpyDuh
   {
     //Local copy of the spy repository to add spies on initial load
     SpyRepository _spyRepo;
+    PostRepository _postRepo;
     public Startup(IConfiguration configuration)
     {
       Configuration = configuration;
       _spyRepo = new SpyRepository();
-      initializeSpies();
+      InitializeSpies();
+      _postRepo = new PostRepository();
+      InitializePosts();
     }
 
     public IConfiguration Configuration { get; }
@@ -62,7 +65,7 @@ namespace TomMRiddle_SpyDuh
       });
     }
     //This method is where we will add initial spies to the repository
-    public void initializeSpies()
+    public void InitializeSpies()
     {
       //Our spies that we start with
       Spy boris = new Spy
@@ -92,7 +95,7 @@ namespace TomMRiddle_SpyDuh
         SpyServices = new List<string>
         {
           "Non-Covert Actions",
-          "Inadvertly starting a nuclear standoff"
+          "Inadvertently starting a nuclear standoff"
         },
       };
       Spy alex = new Spy
@@ -162,7 +165,7 @@ namespace TomMRiddle_SpyDuh
         },
         SpyServices = new List<string>
         {
-          "Inadvertly crashing geopolitical organizations"
+          "Inadvertently crashing geopolitical organizations"
         },
       };
 
@@ -263,5 +266,49 @@ namespace TomMRiddle_SpyDuh
       _spyRepo.AddSpy(james);
     }
 
+    
+    //This method is where we will add initial posts to the repository
+    public void InitializePosts()
+    {
+      //Our posts that we start with
+      Post firstPost = new Post
+      {
+        Services = "Will match any price for committing espionage."
+      };
+      Post secondPost = new Post
+      {
+        Services = "You won't find any spy better at creating nuclear standoffs than me."
+      };
+      Post thirdPost = new Post
+      {
+        Services = "Infiltrating enemy intelligence organizations is my specialty. Call me."
+      };
+      Post fourthPost = new Post
+      {
+        Services = "I dig dirt. Figuratively, not literally. Hire me. Literally."
+      };
+      Post fifthPost = new Post
+      {
+        Services = "Need a bomb planted in the vehicle of someone special? I'm the man for the job."
+      };
+      Post sixthPost = new Post
+      {
+        Services = "Dumping tea in the Boston Harbor is what I do best."
+      };
+      Post seventhPost = new Post
+      {
+        Services = "I can get you those classified documents you want...or your money back."
+      };
+
+      //Adding posts to repo
+      _postRepo.AddPost(firstPost);
+      _postRepo.AddPost(secondPost);
+      _postRepo.AddPost(thirdPost);
+      _postRepo.AddPost(fourthPost);
+      _postRepo.AddPost(fifthPost);
+      _postRepo.AddPost(sixthPost);
+      _postRepo.AddPost(seventhPost);
+
+    }
   }
 }
