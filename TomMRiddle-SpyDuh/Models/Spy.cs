@@ -7,7 +7,7 @@ namespace TomMRiddle_SpyDuh.Models
   {
 
     public string Name { get; set; }
-    public Guid SpyID { get; set; } 
+    public Guid SpyID { get; set; }
     public string Details { get; set; }
     public string SpyBackground { get; set; }
     public List<string> LSTSkills { get; set; }
