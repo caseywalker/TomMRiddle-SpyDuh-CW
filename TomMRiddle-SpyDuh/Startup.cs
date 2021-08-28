@@ -25,9 +25,10 @@ namespace TomMRiddle_SpyDuh
     {
       Configuration = configuration;
       _spyRepo = new SpyRepository();
-      InitializeSpies();
+      
       _postRepo = new PostRepository();
-      InitializePosts();
+      InitializeSpies();
+      //InitializePosts();
     }
 
     public IConfiguration Configuration { get; }
@@ -357,50 +358,86 @@ namespace TomMRiddle_SpyDuh
       //_spyRepo.AddSpy(nate);
       //_spyRepo.AddSpy(ben);
       //_spyRepo.AddSpy(james);
+
+      InitializePosts(boris, john, alex, paul, nate, ben, james);
     }
 
 
     //This method is where we will add initial posts to the repository
-    public void InitializePosts()
+    public void InitializePosts(Spy boris, Spy john, Spy alex, Spy paul, Spy nate, Spy ben, Spy james)
     {
       //Our posts that we start with
       Post firstPost = new Post
       {
+       
+        SpyServices = new List<string>
+        {
+          "Espionage",
+          "Political take-over"
+        },
         Services = "Will match any price for committing espionage."
       };
       Post secondPost = new Post
       {
+        SpyServices = new List<string>
+        {
+          "Non-Covert Actions",
+          "Inadvertently starting a nuclear standoff"
+        },
         Services = "You won't find any spy better at creating nuclear standoffs than me."
       };
       Post thirdPost = new Post
       {
+        SpyServices = new List<string>
+        {
+          "Orchestrating internal conflict",
+          "Disorganizing internal government agencies"
+        },
         Services = "Infiltrating enemy intelligence organizations is my specialty. Call me."
       };
       Post fourthPost = new Post
       {
+        SpyServices = new List<string>
+        {
+          "Digging dirt",
+        },
         Services = "I dig dirt. Figuratively, not literally. Hire me. Literally."
       };
       Post fifthPost = new Post
       {
+        SpyServices = new List<string>
+        {
+          "Winter Soldier",
+        },
         Services = "Need a bomb planted in the vehicle of someone special? I'm the man for the job."
       };
       Post sixthPost = new Post
       {
+        SpyServices = new List<string>
+        {
+          "Espionage",
+          "Dumping tea in the Boston Harbor"
+        },
         Services = "Dumping tea in the Boston Harbor is what I do best."
       };
       Post seventhPost = new Post
       {
+        SpyServices = new List<string>
+        {
+          "Inadvertently crashing geopolitical organizations"
+        },
         Services = "I can get you those classified documents you want...or your money back."
       };
 
+
       //Adding posts to repo
-      _postRepo.AddPost(firstPost);
-      _postRepo.AddPost(secondPost);
-      _postRepo.AddPost(thirdPost);
-      _postRepo.AddPost(fourthPost);
-      _postRepo.AddPost(fifthPost);
-      _postRepo.AddPost(sixthPost);
-      _postRepo.AddPost(seventhPost);
+      _postRepo.AddPost(firstPost, boris.SpyID);
+      _postRepo.AddPost(secondPost, john.SpyID);
+      _postRepo.AddPost(thirdPost, alex.SpyID);
+      _postRepo.AddPost(fourthPost, paul.SpyID);
+      _postRepo.AddPost(fifthPost, nate.SpyID);
+      _postRepo.AddPost(sixthPost, ben.SpyID);
+      _postRepo.AddPost(seventhPost, james.SpyID);
 
     }
   }
