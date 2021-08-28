@@ -7,42 +7,45 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
 {
   public class PostRepository
   {
-    static List<Post> _posts = new List<Post>
-    {
-      new Post
-      {
-        PostID = Guid.NewGuid(),
-        SpyID = new Spy
-        {
-          SpyID = Guid.NewGuid(),
-          Details = "Spy does good job",
-          SpyBackground = "Spy been doin this a long time",
-          LSTSkills = new List<string>
-          {
-            "Spying",
-            "Plotting"
-          },
-          SpyServices = new List<string>
-          {
-            "Espionage",
-            "Political take-over"
-          }
-        },
-        Services = "This is my first posting, please hire me."
-      }
-    };
+    static List<Post> _posts = new List<Post>();
+    //{
+    //  new Post
+    //  {
+    //    PostID = Guid.NewGuid(),
+    //    SpyID = new Spy
+    //    {
+    //      SpyID = Guid.NewGuid(),
+    //      Details = "Spy does good job",
+    //      SpyBackground = "Spy been doin this a long time",
+    //      LSTSkills = new List<string>
+    //      {
+    //        "Spying",
+    //        "Plotting"
+    //      },
+    //      SpyServices = new List<string>
+    //      {
+    //        "Espionage",
+    //        "Political take-over"
+    //      }
+    //    },
+    //    Services = "This is my first posting, please hire me."
+    //  }
+    //};
 
     internal Post GetById(Guid postId)
     {
       return _posts.FirstOrDefault(post => post.PostID == postId);
     }
+
     internal List<Post> GetAll()
     {
       return _posts;
     }
-    internal void Add(Post newPost)
+
+    internal void AddPost(Post newPost)
     {
       newPost.PostID = Guid.NewGuid();
+
       _posts.Add(newPost);
     }
   }

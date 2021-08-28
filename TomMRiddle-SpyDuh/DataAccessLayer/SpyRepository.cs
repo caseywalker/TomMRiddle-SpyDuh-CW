@@ -11,39 +11,6 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
         static List<Spy> _spies = new List<Spy>();
 
         // GetAll() return _spies field
-        //internal IEnumerable<Spy> GetAll()
-        //{
-        //    return _spies;
-        //}
-
-        // Add newSpy Method
-        //internal void Add(Spy newSpy)
-        //{
-        //    newSpy.SpyID = Guid.NewGuid();
-
-        //    _spies.Add(newSpy);
-        //}
-
-        // Get by Id Method
-        //internal Spy GetById(Guid spyId)
-        //{
-        //    return _spies.FirstOrDefault(spy => spy.SpyID == spyId);
-        //}
-
-        // Get by Skills
-        //internal IEnumerable<Spy> GetBySkill(LSTSkills skill)
-        //{
-        //    return _spies.Where(spy => spy.LSTSkills == skill);
-        //}
-
-        // Get by Services
-        //internal IEnumerable<Spy> GetByServices(List SpyServices services)
-        //{
-        //    return _spies.Where(spy => spy.SpyServices == services);
-        //}
-
-
-        // GetAll() return _spies field
         internal IEnumerable<Spy> GetAll()
         {
             var tempSpies = _spies;
@@ -57,6 +24,10 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
 
             _spies.Add(newSpy);
         }
+        //internal void addSpyToFriendsList( Spy friendlySpy)
+        //{
+
+        //}
 
         // Get by ID Method
         internal Spy GetByID(Guid spyID)
@@ -66,6 +37,29 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
 
             //return _spies.FirstOrDefault(spy => spy.SpyID == spyID);
         }
+
+        // Get by Skills
+            internal IEnumerable<Spy> GetBySkill(string skill)
+        {
+            return _spies.Where(spy => Spy.LSTSkills.Contains(skill));
+        }
+
+        // Get by Services
+        //internal IEnumerable<Spy> GetByServices(List SpyServices services)
+        //{
+        //    return _spies.Where(spy => spy.SpyServices == services);
+        //}
+
+    internal IEnumerable<Spy> GetSpyFriends(Guid spyID)
+    {
+      return _spies.Where(x => _spies.FirstOrDefault(y => y.SpyID == spyID).LSTFriendlySpies.Contains(x.SpyID));
+    }
+
+    internal IEnumerable<Spy> GetSpyEnemies(Guid spyID)
+    {
+      return _spies.Where(x => _spies.FirstOrDefault(y => y.SpyID == spyID).LSTEnemySpies.Contains(x.SpyID));
+    }
+
 
         // Get by Name Method
         internal IEnumerable<Spy> GetByName(string name)
@@ -91,16 +85,6 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
         internal IEnumerable<Spy> GetSpiesBySkill(string skill)
         {
             return _spies.Where(Spy => Spy.LSTSkills.Contains(skill));
-        }
-
-        internal IEnumerable<Spy> GetSpyFriends(Guid spyID)
-        {
-            return _spies.FirstOrDefault(spy => spy.SpyID == spyID).LSTFriendlySpies;
-        }
-
-        internal IEnumerable<Spy> GetSpyEnemies(Guid spyID)
-        {
-            return _spies.FirstOrDefault(spy => spy.SpyID == spyID).LSTEnemySpies;
         }
 
         internal IEnumerable<string> GetSpyAvailableSkils(Guid spyID)
