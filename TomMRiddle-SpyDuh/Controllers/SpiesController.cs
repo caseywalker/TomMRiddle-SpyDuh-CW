@@ -30,15 +30,15 @@ namespace TomMRiddle_SpyDuh.Controllers
     }
 
     [HttpGet("getSpyByName/{name}")]
-    public IEnumerable<Spy>  GetSpyByName(string name)
-        {
-          return _spyRepo.GetByName(name);
-        }
+    public IEnumerable<Spy> GetSpyByName(string name)
+    {
+      return _spyRepo.GetByName(name);
+    }
 
-        [HttpGet("getAllSpiesBySkill/{skill}")]
+    [HttpGet("getAllSpiesBySkill/{skill}")]
     public IEnumerable<Spy> GetAllSpiesBySkill(string skill)
     {
-     return _spyRepo.GetSpiesBySkill(skill);
+      return _spyRepo.GetSpiesBySkill(skill);
     }
 
     [HttpGet("getAllSpyFriends/{spyID}")]
@@ -58,7 +58,7 @@ namespace TomMRiddle_SpyDuh.Controllers
     {
       return _spyRepo.GetSpyAvailableSkils(spyID);
     }
-    
+
     [HttpGet("getSpyAllSkillsAndServices/{spyID}")]
     public SkillsAndServices GetSpyAllSkillsAndServices(Guid spyID)
     {
