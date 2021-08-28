@@ -73,6 +73,21 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
       return SkillAndServiceModel;
     }
 
+    internal List<Spy> FriendsOfFriends(Guid spyID)
+    {
+      //Get the spy we want to get list of friends for first. 
+      var matchingSpy = _spies.FirstOrDefault(spy => spy.SpyID == spyID);
+
+      //Get that spy's direct list of friends
+      var firstFriends = _spies.Where(y => matchingSpy.LSTFriendlySpies.Contains(y.SpyID)).ToList();
+
+      var secondFriends = firstFriends.SelectMany(spy => spy.LSTFriendlySpies).ToList();
+      var listToReturn = _spies.Where(x => secondFriends.Contains(x.SpyID)).ToList();
+
+      return listToReturn;
+
+    }
+
 
   }
 }
