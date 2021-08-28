@@ -70,6 +70,7 @@ namespace TomMRiddle_SpyDuh
       //Our spies that we start with
       Spy boris = new Spy
       {
+        Name = "Boris",
         SpyID = new Guid(),
         Details = "Spy does good job",
         SpyBackground = "Spy been doin this a long time",
@@ -86,6 +87,8 @@ namespace TomMRiddle_SpyDuh
       };
       Spy john = new Spy
       {
+
+        Name = "John",
         SpyID = new Guid(),
         Details = "Spy does bad job",
         SpyBackground = "Spy been doin this a short time",
@@ -102,6 +105,7 @@ namespace TomMRiddle_SpyDuh
       };
       Spy alex = new Spy
       {
+        Name = "Alex",
         SpyID = new Guid(),
         Details = "You'll never know who's side he's on",
         SpyBackground = "Has been known to play both sides",
@@ -118,6 +122,7 @@ namespace TomMRiddle_SpyDuh
       };
       Spy paul = new Spy
       {
+        Name = "Paul",
         SpyID = new Guid(),
         Details = "Spy is clueless",
         SpyBackground = "Spy failed out of spy school",
@@ -132,6 +137,7 @@ namespace TomMRiddle_SpyDuh
       };
       Spy nate = new Spy
       {
+        Name = "Nate",
         SpyID = new Guid(),
         Details = "Spy hasn't been seen since 1776.",
         SpyBackground = "The original Spy",
@@ -148,6 +154,7 @@ namespace TomMRiddle_SpyDuh
       };
       Spy ben = new Spy
       {
+        Name = "Ben",
         SpyID = new Guid(),
         Details = "Spy doesn't know he's a spy.",
         SpyBackground = "Sleeper agent.",
@@ -163,6 +170,7 @@ namespace TomMRiddle_SpyDuh
       };
       Spy james = new Spy
       {
+        Name = "James",
         SpyID = new Guid(),
         Details = "Spy is here for a good time, not a long time.",
         SpyBackground = "Spy likes to party.",
@@ -351,7 +359,7 @@ namespace TomMRiddle_SpyDuh
       //_spyRepo.AddSpy(james);
     }
 
-    
+
     //This method is where we will add initial posts to the repository
     public void InitializePosts()
     {

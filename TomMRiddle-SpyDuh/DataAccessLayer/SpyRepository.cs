@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using TomMRiddle_SpyDuh.Models;
 
 namespace TomMRiddle_SpyDuh.DataAccessLayer
@@ -32,10 +33,16 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
     // Get by ID Method
     internal Spy GetByID(Guid spyID)
     {
-      var temp =  _spies.FirstOrDefault(spy => spy.SpyID == spyID);
+      var temp = _spies.FirstOrDefault(spy => spy.SpyID == spyID);
       return temp;
 
       //return _spies.FirstOrDefault(spy => spy.SpyID == spyID);
+    }
+
+    // Get by Name Method
+    internal IEnumerable<Spy> GetByName(string name)
+    {
+      return _spies.Where(Spy => Spy.Name.Contains(name));
     }
 
     internal IEnumerable<Spy> GetSpiesBySkill(string skill)
