@@ -45,8 +45,7 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
             return _spies.Where(Spy => Spy.Name.Contains(name));
         }
 
-        // Get by Skills
-        internal IEnumerable<Spy> GetBySkill(string skill)
+        internal IEnumerable<Spy> GetSpiesBySkill(string skill)
         {
             return _spies.Where(Spy => Spy.LSTSkills.Contains(skill));
         }
@@ -79,11 +78,6 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
             };
 
             return SkillAndServiceModel;
-        }
-
-        internal IEnumerable<Spy> GetSpiesBySkill(string skill)
-        {
-            return _spies.Where(Spy => Spy.LSTSkills.Contains(skill));
         }
 
         internal List<Spy> FriendsOfFriends(Guid spyID)
