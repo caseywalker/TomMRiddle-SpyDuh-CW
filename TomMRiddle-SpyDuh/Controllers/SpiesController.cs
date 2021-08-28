@@ -65,6 +65,13 @@ namespace TomMRiddle_SpyDuh.Controllers
       return _spyRepo.GetSkillsAndServices(spyID);
     }
 
+    //Working through getting friends of friends
+    [HttpGet("getFriendsOfFriends/{spyID}")]
+    public List<Spy> GetFriendsOfFriends(Guid spyID)
+    {
+      return _spyRepo.FriendsOfFriends(spyID);
+    }
+
     [HttpPost]
     public void AddSpy(Spy newSpy)
     {
