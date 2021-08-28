@@ -24,6 +24,7 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
 
             _spies.Add(newSpy);
         }
+
         //internal void addSpyToFriendsList( Spy friendlySpy)
         //{
 
@@ -38,8 +39,14 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
             //return _spies.FirstOrDefault(spy => spy.SpyID == spyID);
         }
 
+        // Get by Name Method
+        internal IEnumerable<Spy> GetByName(string name)
+        {
+            return _spies.Where(Spy => Spy.Name.Contains(name));
+        }
+
         // Get by Skills
-            internal IEnumerable<Spy> GetBySkill(string skill)
+        internal IEnumerable<Spy> GetBySkill(string skill)
         {
             return _spies.Where(Spy => Spy.LSTSkills.Contains(skill));
         }
@@ -50,39 +57,31 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
         //    return _spies.Where(spy => spy.SpyServices == services);
         //}
 
-    internal IEnumerable<Spy> GetSpyFriends(Guid spyID)
-    {
-      return _spies.Where(x => _spies.FirstOrDefault(y => y.SpyID == spyID).LSTFriendlySpies.Contains(x.SpyID));
-    }
-
-    internal IEnumerable<Spy> GetSpyEnemies(Guid spyID)
-    {
-      return _spies.Where(x => _spies.FirstOrDefault(y => y.SpyID == spyID).LSTEnemySpies.Contains(x.SpyID));
-    }
-
-
-        // Get by Name Method
-        internal IEnumerable<Spy> GetByName(string name)
+        internal IEnumerable<Spy> GetSpyFriends(Guid spyID)
         {
-            return _spies.Where(Spy => Spy.Name.Contains(name));
+            return _spies.Where(x => _spies.FirstOrDefault(y => y.SpyID == spyID).LSTFriendlySpies.Contains(x.SpyID));
         }
 
-    internal SkillsAndServices GetSkillsAndServices(Guid spyID)
-    {
-      // Get the spy that is passed by controller
-      var matchingSpy = _spies.FirstOrDefault(spy => spy.SpyID == spyID);
+        internal IEnumerable<Spy> GetSpyEnemies(Guid spyID)
+        {
+            return _spies.Where(x => _spies.FirstOrDefault(y => y.SpyID == spyID).LSTEnemySpies.Contains(x.SpyID));
+        }
 
-      // Create a local model to return the skills and services of that spy. 
-      var SkillAndServiceModel = new SkillsAndServices
-      {
-        ListSkills = matchingSpy.LSTSkills,
-        ListSpyServices = matchingSpy.SpyServices
-      };
+        internal SkillsAndServices GetSkillsAndServices(Guid spyID)
+        {
+            // Get the spy that is passed by controller
+            var matchingSpy = _spies.FirstOrDefault(spy => spy.SpyID == spyID);
 
-      return SkillAndServiceModel;
-    }
+            // Create a local model to return the skills and services of that spy. 
+            var SkillAndServiceModel = new SkillsAndServices
+            {
+                ListSkills = matchingSpy.LSTSkills,
+                ListSpyServices = matchingSpy.SpyServices
+            };
 
-<<<<<<< HEAD
+            return SkillAndServiceModel;
+        }
+
         internal IEnumerable<Spy> GetSpiesBySkill(string skill)
         {
             return _spies.Where(Spy => Spy.LSTSkills.Contains(skill));
@@ -92,23 +91,20 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
         {
             return _spies.FirstOrDefault(spy => spy.SpyID == spyID).LSTSkills;
         }
-=======
-    internal List<Spy> FriendsOfFriends(Guid spyID)
-    {
-      //Get the spy we want to get list of friends for first. 
-      var matchingSpy = _spies.FirstOrDefault(spy => spy.SpyID == spyID);
+        internal List<Spy> FriendsOfFriends(Guid spyID)
+        {
+            //Get the spy we want to get list of friends for first. 
+            var matchingSpy = _spies.FirstOrDefault(spy => spy.SpyID == spyID);
 
-      //Get that spy's direct list of friends
-      var firstFriends = _spies.Where(y => matchingSpy.LSTFriendlySpies.Contains(y.SpyID)).ToList();
+            //Get that spy's direct list of friends
+            var firstFriends = _spies.Where(y => matchingSpy.LSTFriendlySpies.Contains(y.SpyID)).ToList();
 
-      var secondFriends = firstFriends.SelectMany(spy => spy.LSTFriendlySpies).ToList();
-      var listToReturn = _spies.Where(x => secondFriends.Contains(x.SpyID)).ToList();
+            var secondFriends = firstFriends.SelectMany(spy => spy.LSTFriendlySpies).ToList();
+            var listToReturn = _spies.Where(x => secondFriends.Contains(x.SpyID)).ToList();
 
-      return listToReturn;
+            return listToReturn;
 
-    }
-
->>>>>>> master
+        }
 
 
     }
