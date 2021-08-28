@@ -42,9 +42,11 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
       return _posts;
     }
 
-    internal void AddPost(Post newPost)
+    internal void AddPost(Post newPost, Guid spyID)
     {
       newPost.PostID = Guid.NewGuid();
+
+      newPost.SpyID = spyID;
 
       _posts.Add(newPost);
     }

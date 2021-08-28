@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using TomMRiddle_SpyDuh.DataAccessLayer;
 using TomMRiddle_SpyDuh.Models;
@@ -24,9 +25,9 @@ namespace TomMRiddle_SpyDuh.Controllers
     //Asking for someone to give a parameter of a post -> newPost
     //It is an instance of the class Post called newPost
     [HttpPost] 
-    public void AddPost(Post newPost)
+    public void AddPost(Post newPost, Guid spyID)
     {
-      _postRepo.AddPost(newPost);
+      _postRepo.AddPost(newPost, spyID);
     }
   }
 }
