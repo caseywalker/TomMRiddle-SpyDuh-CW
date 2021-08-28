@@ -51,12 +51,6 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
             return _spies.Where(Spy => Spy.LSTSkills.Contains(skill));
         }
 
-        // Get by Services
-        internal IEnumerable<Spy> GetByServices(string services)
-        {
-            return _spies.Where(Spy => Spy.SpyServices.Contains(services));
-        }
-
         internal IEnumerable<Spy> GetSpyFriends(Guid spyID)
         {
             return _spies.Where(x => _spies.FirstOrDefault(y => y.SpyID == spyID).LSTFriendlySpies.Contains(x.SpyID));
