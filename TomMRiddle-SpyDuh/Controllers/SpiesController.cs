@@ -24,9 +24,9 @@ namespace TomMRiddle_SpyDuh.Controllers
     }
 
     [HttpGet("getSpyByID/{spyID}")]
-    public void GetSpyByID(Guid spyID)
+    public Spy GetSpyByID(Guid spyID)
     {
-      _spyRepo.GetByID(spyID);
+      return _spyRepo.GetByID(spyID);
     }
 
     [HttpGet("getSpyByName/{name}")]
