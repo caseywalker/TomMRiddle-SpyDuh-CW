@@ -9,24 +9,24 @@ namespace TomMRiddle_SpyDuh.Controllers
   [ApiController]         //api controller - returns json/xml
   public class PostsController : ControllerBase
   {
-    PostRepository _repo;
+    PostRepository _postRepo;
     public PostsController()
     {
-      _repo = new PostRepository();
+      _postRepo = new PostRepository();
     }
 
     [HttpGet]
     public List<Post> GetAllPosts()
     {
-      return _repo.GetAll();
+      return _postRepo.GetAll();
     }
 
     //Asking for someone to give a parameter of a post -> newPost
     //It is an instance of the class Post called newPost
     [HttpPost] 
-    public void AddAPost(Post newPost)
+    public void AddPost(Post newPost)
     {
-      _repo.Add(newPost);
+      _postRepo.AddPost(newPost);
     }
   }
 }
