@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,6 +9,13 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
 {
   public class SpyRepository
   {
+    readonly string _connectionString;
+
+    public SpyRepository(IConfiguration config)
+    {
+      _connectionString = config.GetConnectionString("SpyduhTom");
+    }
+
     static List<Spy> _spies = new List<Spy>();
 
     // GetAll() return _spies field
