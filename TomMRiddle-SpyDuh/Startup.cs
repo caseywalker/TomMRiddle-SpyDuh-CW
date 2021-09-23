@@ -24,9 +24,9 @@ namespace TomMRiddle_SpyDuh
     public Startup(IConfiguration configuration)
     {
       Configuration = configuration;
-      _spyRepo = new SpyRepository();
+      //_spyRepo = new SpyRepository();
       
-      _postRepo = new PostRepository();
+      //_postRepo = new PostRepository();
       InitializeSpies();
       //InitializePosts();
     }
@@ -36,7 +36,8 @@ namespace TomMRiddle_SpyDuh
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
-
+      services.AddTransient<PostRepository>();
+      services.AddTransient<SpyRepository>();
       services.AddControllers();
       services.AddSwaggerGen(c =>
       {
