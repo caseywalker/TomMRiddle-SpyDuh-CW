@@ -11,9 +11,9 @@ namespace TomMRiddle_SpyDuh.Controllers
   public class PostsController : ControllerBase
   {
     PostRepository _postRepo;
-    public PostsController()
+    public PostsController(PostRepository repo)
     {
-      _postRepo = new PostRepository();
+      _postRepo = repo;
     }
 
     [HttpGet]
