@@ -70,159 +70,44 @@ namespace TomMRiddle_SpyDuh
     public void InitializeSpies()
     {
       //Our spies that we start with
-      Spy boris = new Spy
-      {
-        Name = "Boris",
-        SpyID = new Guid(),
-        Details = "Spy does good job",
-        SpyBackground = "Spy been doin this a long time",
-        LSTSkills = new List<string>
-        {
-          "Spying",
-          "Plotting"
-        },
-        SpyServices = new List<string>
-        {
-          "Espionage",
-          "Political take-over"
-        },
-      };
-      Spy john = new Spy
-      {
-
-        Name = "John",
-        SpyID = new Guid(),
-        Details = "Spy does bad job",
-        SpyBackground = "Spy been doin this a short time",
-        LSTSkills = new List<string>
-        {
-          "Spying",
-          "Failing"
-        },
-        SpyServices = new List<string>
-        {
-          "Non-Covert Actions",
-          "Inadvertently starting a nuclear standoff"
-        },
-      };
-      Spy alex = new Spy
-      {
-        Name = "Alex",
-        SpyID = new Guid(),
-        Details = "You'll never know who's side he's on",
-        SpyBackground = "Has been known to play both sides",
-        LSTSkills = new List<string>
-        {
-          "Spying",
-          "Double-Agent"
-        },
-        SpyServices = new List<string>
-        {
-          "Orchestrating internal conflict",
-          "Disorganizing internal government agencies"
-        },
-      };
-      Spy paul = new Spy
-      {
-        Name = "Paul",
-        SpyID = new Guid(),
-        Details = "Spy is clueless",
-        SpyBackground = "Spy failed out of spy school",
-        LSTSkills = new List<string>
-        {
-          "None"
-        },
-        SpyServices = new List<string>
-        {
-          "Digging dirt",
-        },
-      };
-      Spy nate = new Spy
-      {
-        Name = "Nate",
-        SpyID = new Guid(),
-        Details = "Spy hasn't been seen since 1776.",
-        SpyBackground = "The original Spy",
-        LSTSkills = new List<string>
-        {
-          "Spying",
-          "Demolition"
-        },
-        SpyServices = new List<string>
-        {
-          "Espionage",
-          "Dumping tea in the Boston Harbor"
-        },
-      };
-      Spy ben = new Spy
-      {
-        Name = "Ben",
-        SpyID = new Guid(),
-        Details = "Spy doesn't know he's a spy.",
-        SpyBackground = "Sleeper agent.",
-        LSTSkills = new List<string>
-        {
-          "Spying",
-          "Sleeping"
-        },
-        SpyServices = new List<string>
-        {
-          "Winter Soldier",
-        },
-      };
-      Spy james = new Spy
-      {
-        Name = "James",
-        SpyID = new Guid(),
-        Details = "Spy is here for a good time, not a long time.",
-        SpyBackground = "Spy likes to party.",
-        LSTSkills = new List<string>
-        {
-          "Chugging beer"
-        },
-        SpyServices = new List<string>
-        {
-          "Inadvertently crashing geopolitical organizations"
-        },
-      };
-
+      
       //Adding spies to repo
-      _spyRepo.AddSpy(boris);
-      _spyRepo.AddSpy(john);
-      _spyRepo.AddSpy(alex);
-      _spyRepo.AddSpy(paul);
-      _spyRepo.AddSpy(nate);
-      _spyRepo.AddSpy(ben);
-      _spyRepo.AddSpy(james);
+      //_spyRepo.AddSpy(boris);
+      //_spyRepo.AddSpy(john);
+      //_spyRepo.AddSpy(alex);
+      //_spyRepo.AddSpy(paul);
+      //_spyRepo.AddSpy(nate);
+      //_spyRepo.AddSpy(ben);
+      //_spyRepo.AddSpy(james);
 
 
 
-      boris.AddSpyToFriendsList(john.SpyID);
-      boris.AddSpyToFriendsList(alex.SpyID);
-      boris.AddSpyToFriendsList(paul.SpyID);
+      //boris.AddSpyToFriendsList(john.SpyID);
+      //boris.AddSpyToFriendsList(alex.SpyID);
+      //boris.AddSpyToFriendsList(paul.SpyID);
 
-      john.AddSpyToFriendsList(boris.SpyID);
-      john.AddSpyToFriendsList(nate.SpyID);
-      john.AddSpyToFriendsList(ben.SpyID);
+      //john.AddSpyToFriendsList(boris.SpyID);
+      //john.AddSpyToFriendsList(nate.SpyID);
+      //john.AddSpyToFriendsList(ben.SpyID);
 
-      alex.AddSpyToFriendsList(james.SpyID);
-      alex.AddSpyToFriendsList(boris.SpyID);
-      alex.AddSpyToFriendsList(john.SpyID);
+      //alex.AddSpyToFriendsList(james.SpyID);
+      //alex.AddSpyToFriendsList(boris.SpyID);
+      //alex.AddSpyToFriendsList(john.SpyID);
 
-      paul.AddSpyToFriendsList(alex.SpyID);
-
-
-      nate.AddSpyToFriendsList(nate.SpyID);
-      nate.AddSpyToFriendsList(james.SpyID);
+      //paul.AddSpyToFriendsList(alex.SpyID);
 
 
-      ben.AddSpyToFriendsList(john.SpyID);
-      ben.AddSpyToFriendsList(paul.SpyID);
+      //nate.AddSpyToFriendsList(nate.SpyID);
+      //nate.AddSpyToFriendsList(james.SpyID);
 
-      james.AddSpyToFriendsList(boris.SpyID);
-      james.AddSpyToFriendsList(john.SpyID);
-      james.AddSpyToFriendsList(paul.SpyID);
-      james.AddSpyToFriendsList(nate.SpyID);
+
+      //ben.AddSpyToFriendsList(john.SpyID);
+      //ben.AddSpyToFriendsList(paul.SpyID);
+
+      //james.AddSpyToFriendsList(boris.SpyID);
+      //james.AddSpyToFriendsList(john.SpyID);
+      //james.AddSpyToFriendsList(paul.SpyID);
+      //james.AddSpyToFriendsList(nate.SpyID);
 
 
 
@@ -268,99 +153,6 @@ namespace TomMRiddle_SpyDuh
       //};
 
 
-
-      // Adding spies to list of enemies
-      //boris.LSTEnemySpies = new List<Spy>
-      //{
-      //  nate,
-      //  ben,
-      //  james
-      //};
-
-      boris.AddSpyToEnemyList(nate.SpyID);
-      boris.AddSpyToEnemyList(ben.SpyID);
-      boris.AddSpyToEnemyList(james.SpyID);
-
-      //john.LSTEnemySpies = new List<Spy>
-      //{
-      //  james,
-      //  paul,
-      //  alex
-      //};
-
-      john.AddSpyToEnemyList(james.SpyID);
-      john.AddSpyToEnemyList(paul.SpyID);
-      john.AddSpyToEnemyList(alex.SpyID);
-
-      //alex.LSTEnemySpies = new List<Spy>
-      //{
-      //  paul,
-      //  nate,
-      //  ben
-      //};
-
-      alex.AddSpyToEnemyList(paul.SpyID);
-      alex.AddSpyToEnemyList(nate.SpyID);
-      alex.AddSpyToEnemyList(ben.SpyID);
-
-      //paul.LSTEnemySpies = new List<Spy>
-      //{
-      //  nate,
-      //  ben,
-      //  james,
-      //  boris,
-      //  john
-      //};
-
-
-      paul.AddSpyToEnemyList(nate.SpyID);
-      paul.AddSpyToEnemyList(ben.SpyID);
-      paul.AddSpyToEnemyList(james.SpyID);
-      paul.AddSpyToEnemyList(boris.SpyID);
-      paul.AddSpyToEnemyList(john.SpyID);
-
-      //nate.LSTEnemySpies = new List<Spy>
-      //{
-      //  boris,
-      //  john,
-      //  alex,
-      //  paul
-      //};
-
-      nate.AddSpyToEnemyList(boris.SpyID);
-      nate.AddSpyToEnemyList(john.SpyID);
-      nate.AddSpyToEnemyList(alex.SpyID);
-      nate.AddSpyToEnemyList(paul.SpyID);
-
-      //ben.LSTEnemySpies = new List<Spy>
-      //{
-      //  alex,
-      //  james
-      //};
-
-      ben.AddSpyToEnemyList(alex.SpyID);
-      ben.AddSpyToEnemyList(james.SpyID);
-
-      //james.LSTEnemySpies = new List<Spy>
-      //{
-      //  alex,
-      //  ben
-      //};
-
-      james.AddSpyToEnemyList(alex.SpyID);
-      james.AddSpyToEnemyList(ben.SpyID);
-
-
-      ////Adding spies to repo
-      //_spyRepo.AddSpy(boris);
-      //_spyRepo.AddSpy(john);
-      //_spyRepo.AddSpy(alex);
-      //_spyRepo.AddSpy(paul);
-      //_spyRepo.AddSpy(nate);
-      //_spyRepo.AddSpy(ben);
-      //_spyRepo.AddSpy(james);
-
-      InitializePosts(boris, john, alex, paul, nate, ben, james);
     }
 
 
@@ -432,13 +224,13 @@ namespace TomMRiddle_SpyDuh
 
 
       //Adding posts to repo
-      _postRepo.AddPost(firstPost, boris.SpyID);
-      _postRepo.AddPost(secondPost, john.SpyID);
-      _postRepo.AddPost(thirdPost, alex.SpyID);
-      _postRepo.AddPost(fourthPost, paul.SpyID);
-      _postRepo.AddPost(fifthPost, nate.SpyID);
-      _postRepo.AddPost(sixthPost, ben.SpyID);
-      _postRepo.AddPost(seventhPost, james.SpyID);
+      //_postRepo.AddPost(firstPost, boris.SpyID);
+      //_postRepo.AddPost(secondPost, john.SpyID);
+      //_postRepo.AddPost(thirdPost, alex.SpyID);
+      //_postRepo.AddPost(fourthPost, paul.SpyID);
+      //_postRepo.AddPost(fifthPost, nate.SpyID);
+      //_postRepo.AddPost(sixthPost, ben.SpyID);
+      //_postRepo.AddPost(seventhPost, james.SpyID);
 
     }
   }

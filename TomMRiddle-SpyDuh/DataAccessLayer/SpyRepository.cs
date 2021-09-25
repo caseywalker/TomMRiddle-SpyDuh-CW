@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TomMRiddle_SpyDuh.Models;
+using Dapper;
+using System.Data.SqlClient;
 
 namespace TomMRiddle_SpyDuh.DataAccessLayer
 {
@@ -21,8 +23,31 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
     // GetAll() return _spies field
     internal IEnumerable<Spy> GetAll()
     {
-      var tempSpies = _spies;
-      return tempSpies;
+      using var db = new SqlConnection(_connectionString);
+
+      var sql = @"SELECT *
+                  FROM Spies";
+      var spies = db.Query<Spy>(sql);
+
+
+      var skillSql = @"SELECT *
+                    FROM SpySkills";
+      var skills = db.Query<SpySkills>(skillSql).ToList();
+
+      foreach (var spy in spies)
+      {
+        spy.LSTSkills = skills.Where(skill => skill.SpyID == spy.SpyID).ToList();
+      }
+
+      foreach (var spy in spies)
+      {
+        spy.Skills = skills.Where(skill => skill.SpyID == spy.SpyID).Select(skill => skill.Skill).ToList();
+      }
+
+      
+      return spies;
+      //var tempSpies = _spies;
+      //return tempSpies;
     }
 
     // Add newSpy Method
@@ -53,10 +78,10 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
       return _spies.Where(Spy => Spy.Name.Contains(name));
     }
 
-    internal IEnumerable<Spy> GetSpiesBySkill(string skill)
-    {
-      return _spies.Where(Spy => Spy.LSTSkills.Contains(skill));
-    }
+    //internal IEnumerable<Spy> GetSpiesBySkill(string skill)
+    //{
+    //  return _spies.Where(Spy => Spy.LSTSkills.Contains(skill));
+    //}
 
     internal IEnumerable<Spy> GetSpyFriends(Guid spyID)
     {
@@ -68,25 +93,25 @@ namespace TomMRiddle_SpyDuh.DataAccessLayer
       return _spies.Where(x => _spies.FirstOrDefault(y => y.SpyID == spyID).LSTEnemySpies.Contains(x.SpyID));
     }
 
-    internal IEnumerable<string> GetSpyAvailableSkils(Guid spyID)
-    {
-      return _spies.FirstOrDefault(spy => spy.SpyID == spyID).LSTSkills;
-    }
+    //internal IEnumerable<string> GetSpyAvailableSkils(Guid spyID)
+    //{
+    //  return _spies.FirstOrDefault(spy => spy.SpyID == spyID).LSTSkills;
+    //}
 
-    internal SkillsAndServices GetSkillsAndServices(Guid spyID)
-    {
+    //internal SkillsAndServices GetSkillsAndServices(Guid spyID)
+    //{
       // Get the spy that is passed by controller
-      var matchingSpy = _spies.FirstOrDefault(spy => spy.SpyID == spyID);
+      //var matchingSpy = _spies.FirstOrDefault(spy => spy.SpyID == spyID);
 
       // Create a local model to return the skills and services of that spy. 
-      var SkillAndServiceModel = new SkillsAndServices
-      {
-        ListSkills = matchingSpy.LSTSkills,
-        ListSpyServices = matchingSpy.SpyServices
-      };
+      //var SkillAndServiceModel = new SkillsAndServices
+      //{
+      //  ListSkills = matchingSpy.LSTSkills,
+      //  ListSpyServices = matchingSpy.SpyServices
+      //};
 
-      return SkillAndServiceModel;
-    }
+      //return SkillAndServiceModel;
+    //}
 
     internal List<Spy> FriendsOfFriends(Guid spyID)
     {

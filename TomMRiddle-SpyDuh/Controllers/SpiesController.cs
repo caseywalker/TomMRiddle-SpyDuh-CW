@@ -12,9 +12,9 @@ namespace TomMRiddle_SpyDuh.Controllers
   public class SpiesController : ControllerBase
   {
     SpyRepository _spyRepo;
-    public SpiesController()
+    public SpiesController(SpyRepository repo)
     {
-      _spyRepo = new SpyRepository();
+      _spyRepo =  repo;
     }
 
     [HttpGet]
@@ -35,11 +35,11 @@ namespace TomMRiddle_SpyDuh.Controllers
       return _spyRepo.GetByName(name);
     }
 
-    [HttpGet("getAllSpiesBySkill/{skill}")]
-    public IEnumerable<Spy> GetAllSpiesBySkill(string skill)
-    {
-      return _spyRepo.GetSpiesBySkill(skill);
-    }
+    //[HttpGet("getAllSpiesBySkill/{skill}")]
+    //public IEnumerable<Spy> GetAllSpiesBySkill(string skill)
+    //{
+    //  return _spyRepo.GetSpiesBySkill(skill);
+    //}
 
     [HttpGet("getAllSpyFriends/{spyID}")]
     public IEnumerable<Spy> GetAllSpyFriends(Guid spyID)
@@ -53,17 +53,17 @@ namespace TomMRiddle_SpyDuh.Controllers
       return _spyRepo.GetSpyEnemies(spyID);
     }
 
-    [HttpGet("getSpyAllAvailableSkils/{spyID}")]
-    public IEnumerable<string> GetSpyAllAvailableSkils(Guid spyID)
-    {
-      return _spyRepo.GetSpyAvailableSkils(spyID);
-    }
+    //[HttpGet("getSpyAllAvailableSkils/{spyID}")]
+    //public IEnumerable<string> GetSpyAllAvailableSkils(Guid spyID)
+    //{
+    //  return _spyRepo.GetSpyAvailableSkils(spyID);
+    //}
 
-    [HttpGet("getSpyAllSkillsAndServices/{spyID}")]
-    public SkillsAndServices GetSpyAllSkillsAndServices(Guid spyID)
-    {
-      return _spyRepo.GetSkillsAndServices(spyID);
-    }
+    //[HttpGet("getSpyAllSkillsAndServices/{spyID}")]
+    //public SkillsAndServices GetSpyAllSkillsAndServices(Guid spyID)
+    //{
+    //  return _spyRepo.GetSkillsAndServices(spyID);
+    //}
 
     //Working through getting friends of friends
     [HttpGet("getFriendsOfFriends/{spyID}")]
